@@ -1,4 +1,4 @@
-let board = []
+let board = [undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, ]
 let winner = false
 
 function resetGame() {
@@ -30,41 +30,20 @@ function play(val) {
   }
   // Check if there's a winner
   board.map((space, i) => {
-    if (board[i] === board[i + 3] && board[i] === board[i + 6]) {
+    // Check verticals
+    if (board[i] === board[i + 3] && board[i] === board[i + 6] && board[i] !== undefined) {
       winner = true
       return alert(`${board[i]} wins!`)
     }
-    if (board[i] % 3 === 0 && board[i] === board[i+1] && board[i] === board[i+2]) {
+    // Check horizontals
+    if (board[i] % 3 === 0 && board[i] === board[i+1] && board[i] === board[i+2] && board[i] !== undefined) {
       winner = true
       return alert(`${board[i]} wins!`)
     }
   })
-  // if (
-  //   board[0] !== undefined &&
-  //   board[0] === board[1] &&
-  //   board[0] === board[2]
-  // ) {
-  //   winner = true
-  //   alert(`${board[0]} wins!`)
-  // }
-  // if (
-  //   board[3] !== undefined &&
-  //   board[3] === board[4] &&
-  //   board[3] === board[5]
-  // ) {
-  //   winner = true
-  //   alert(`${board[3]} wins!`)
-  // }
-  // if (
-  //   board[6] !== undefined &&
-  //   board[6] === board[7] &&
-  //   board[6] === board[8]
-  // ) {
-  //   winner = true
-  //   alert(`${board[6]} wins!`)
-  // }
+  // Check diagonals
   if (
-    board[2] !== undefined &&
+    board[2] !== undefined &&    
     board[2] === board[4] &&
     board[2] === board[6]
   ) {

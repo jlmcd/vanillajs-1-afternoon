@@ -34,3 +34,24 @@
     text-align: center;
     font-size: 2em;
 }
+.player {
+    display: inline-block;
+}
+.player:nth-of-type(1) {
+    margin-right: .5rem;
+}
+.player-container {
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+}
+button {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    padding: .5rem 1.2rem;
+    border: none;
+    border-radius: 7px;
+    background: #77aaff;
+    font-size: 1rem;
+}
